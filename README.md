@@ -1,6 +1,6 @@
 # Code Model ResearchOps Dashboard
 
-A portfolio-ready starter project for evaluating AI coding assistants and tracking model outputs from **experiment** to **release candidate**.
+A starter project for evaluating AI coding assistants and tracking model outputs from **experiment** to **release candidate**.
 
 This project is designed for roles involving AI/code-model research operations, technical program management, developer tooling, research-to-release workflows, and evaluation infrastructure.
 
@@ -95,29 +95,6 @@ http://localhost:5173
    - failed tests
    - release-readiness summary
 
-## Suggested portfolio upgrades
-
-### Weekend version
-- Add 3–5 coding tasks
-- Improve README screenshots
-- Add simple charts
-- Add GitHub Actions
-
-### Strong version
-- Add model comparison table
-- Add OpenAI/Mistral/local model integration
-- Add experiment notes
-- Add benchmark tags: `bugfix`, `refactor`, `test-generation`, `api-design`
-- Add downloadable leadership report
-
-### Excellent version
-- Add task difficulty scoring
-- Add flaky-test detection
-- Add regression tracking across model versions
-- Add authentication
-- Add historical trend charts
-- Deploy frontend and backend
-
-## Resume bullet
-
-Built a full-stack ResearchOps dashboard for evaluating AI coding assistants, using automated test-based scoring, experiment tracking, and executive-ready summaries to simulate the operational path from code-model research to release candidate.
+## Screenshots
+Initial load of webpage, pre-run:
+![Pre Run](https://github.com/ksheely/code-model-researchops/blob/main/screenshots/prerun.png?raw=true)

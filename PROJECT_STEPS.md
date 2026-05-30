@@ -80,3 +80,34 @@ Add:
 - clear README
 - resume bullet
 - short project write-up explaining why this matters
+
+
+
+
+
+## Suggested portfolio upgrades
+
+### Weekend version
+- Add 3–5 coding tasks
+- Improve README screenshots
+- Add simple charts
+- Add GitHub Actions
+
+### Strong version
+- Add model comparison table
+- Add OpenAI/Mistral/local model integration
+- Add experiment notes
+- Add benchmark tags: `bugfix`, `refactor`, `test-generation`, `api-design`
+- Add downloadable leadership report
+
+### Excellent version
+- Add task difficulty scoring
+- Add flaky-test detection
+- Add regression tracking across model versions
+- Add authentication
+- Add historical trend charts
+- Deploy frontend and backend
+
+## Resume bullet
+
+Built a full-stack ResearchOps dashboard for evaluating AI coding assistants, using automated test-based scoring, experiment tracking, and executive-ready summaries to simulate the operational path from code-model research to release candidate.
