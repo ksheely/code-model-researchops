@@ -13,3 +13,8 @@ class EvaluationResponse(BaseModel):
     score: float
     test_output: str
     leadership_summary: str
+
+class UserResponse(BaseModel):
+    first: str
+    last: str
+    email: str

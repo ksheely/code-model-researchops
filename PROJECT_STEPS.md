@@ -1,13 +1,4 @@
-# Steps to Complete the Project
 
-## Phase 1: Make the starter run
-
-1. Run the backend.
-2. Run the seed script.
-3. Open `/docs` and test the `/tasks` endpoint.
-4. Run the frontend.
-5. Submit a working FizzBuzz answer.
-6. Submit a broken answer and confirm the failure is captured.
 
 ## Phase 2: Add stronger evaluation tasks
 

@@ -32,3 +32,9 @@ class EvaluationRun(SQLModel, table=True):
     score: float
     test_output: str
     leadership_summary: str
+
+class Users(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    first_name: str
+    last_name: str
+    email: str

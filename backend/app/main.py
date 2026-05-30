@@ -1,22 +1,30 @@
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import Session, select
+from email_validator import validate_email, EmailNotValidError
 
 from app.database import get_session, init_db
 from app.evaluation.runner import make_leadership_summary, run_python_evaluation
-from app.models import CodingTask, EvaluationRun, PipelineStatus
-from app.schemas import EvaluationResponse, SubmissionRequest
+from app.models import CodingTask, EvaluationRun, PipelineStatus, Users
+from app.schemas import EvaluationResponse, SubmissionRequest, UserResponse
 
 app = FastAPI(title="Code Model ResearchOps API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "http://localhost:5175",
+        "http://localhost:5176",
+        "http://127.0.0.1:5173",
+        "http://127.0.0.1:5174",
+        "http://127.0.0.1:5175",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 @app.on_event("startup")
 def on_startup():
@@ -105,3 +113,32 @@ def evaluate_submission(
 @app.get("/runs")
 def list_runs(session: Session = Depends(get_session)):
     return session.exec(select(EvaluationRun)).all()
+
+@app.post("/users")
+def create_users(
+    request: UserResponse,
+    session: Session = Depends(get_session),
+):
+    # Check if email already exists
+    check_email = session.get(Users, request.email)
+    if check_email:
+        return "Email already found in system." 
+    
+    # Check if email is in correct format
+    try:
+        # Check and deliverability (DNS) check
+        email_info = validate_email(request.email, check_deliverability=True)
+        # Get the normalized form of the email (e.g., lowercase domain)
+        normalized_email = email_info.normalized
+        
+    except EmailNotValidError as e:
+        # The library provides human-readable error messages
+        return(f"Invalid: {str(e)}")
+
+    # Create user object
+    user = Users(first_name=request.first, last_name=request.last, email=normalized_email)
+
+    session.add(user)
+
+    return {"message": "User created successfully"}
+
