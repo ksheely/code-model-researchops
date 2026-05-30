@@ -4,6 +4,10 @@ A starter project for evaluating AI coding assistants and tracking model outputs
 
 This project is designed for roles involving AI/code-model research operations, technical program management, developer tooling, research-to-release workflows, and evaluation infrastructure.
 
+## A note on project tasks
+
+This project was done as an experiment, and not meant to be viewed as publishable project. *Many* updates and feature work could be done.
+
 ## What it does
 
 - Stores coding evaluation tasks
@@ -97,4 +101,5 @@ http://localhost:5173
 
 ## Screenshots
 Initial load of webpage, pre-run:
+
 ![Pre Run](https://github.com/ksheely/code-model-researchops/blob/main/screenshots/prerun.png?raw=true)
