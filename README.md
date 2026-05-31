@@ -8,6 +8,13 @@ This project is designed for roles involving AI/code-model research operations, 
 
 This project was done as an experiment, and not meant to be viewed as publishable project. *Many* updates and feature work could be done.
 
+## Incomplete parts
+
+*(Mostly a note for myself)* As any experiented project, there are many areas I would improve or continue to work on. A few areas I would add:
+- Add more advance tasks
+- Improved testing
+- Improve the scoring model
+
 ## What it does
 
 - Stores coding evaluation tasks
